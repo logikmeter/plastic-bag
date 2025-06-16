@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadeByPersians.ir - محصولات با کیفیت ایرانی</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Vazir -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2c5530;
+            --secondary-color: #4a7c59;
+            --accent-color: #f8b500;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        * {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .language-selector {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .language-selector:focus {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--accent-color);
+            color: var(--white);
+            box-shadow: 0 0 0 0.2rem rgba(248, 181, 0, 0.25);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--white) 0%, #f1f3f4 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .brand-highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 3rem 0;
+            background: var(--white);
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            height: 100%;
+            background: var(--bg-light);
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-color);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.9), rgba(74, 124, 89, 0.9));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-method:hover {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 0;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+            
+            .contact-item {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .product-image {
+                height: 200px;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-method {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="logo-section">
+                        <div class="logo">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h1 class="brand-name">MadeByPersians.ir</h1>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-info justify-content-md-end">
+                        <a href="mailto:sales@madebypersians.ir" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>sales@madebypersians.ir</span>
+                        </a>
+                        <a href="https://wa.me/989214843361" class="contact-item" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+98 921 484 3361</span>
+                        </a>
+                        <select class="language-selector" onchange="changeLanguage(this.value)">
+                            <option value="fa">فارسی</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="fade-in-up">
+                <h1>محصولات با کیفیت ایرانی</h1>
+                <p>
+                    در <span class="brand-highlight">MadeByPersians</span>، ما بهترین محصولات را مستقیماً از تولیدکنندگان ایرانی با کیفیت برتر به شما ارائه می‌دهیم!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="feature-title">دسترسی مستقیم</h3>
+                        <p>ارتباط مستقیم با تولیدکنندگان ایرانی بدون واسطه</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="feature-title">کیفیت بالا</h3>
+                        <p>محصولات با بالاترین استانداردهای کیفی و تضمین اصالت</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 class="feature-title">واردات آسان</h3>
+                        <p>فرآیند ساده و سریع واردات با پشتیبانی کامل</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">کاتالوگ محصولات</h2>
+            
+            <!-- کیسه‌های پلاستیکی و فریزر -->
+            <div class="category-section">
+                <h3 class="category-title">کیسه‌های پلاستیکی و فریزر</h3>
+                <div class="product-grid" id="plastic-bags">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+
+            <!-- کیسه‌های زباله -->
+            <div class="category-section">
+                <h3 class="category-title">کیسه‌های زباله</h3>
+                <div class="product-grid" id="garbage-bags">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+
+            <!-- سفره و رومیزی -->
+            <div class="category-section">
+                <h3 class="category-title">سفره و رومیزی</h3>
+                <div class="product-grid" id="tablecloths">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+
+            <!-- سایر محصولات -->
+            <div class="category-section">
+                <h3 class="category-title">سایر محصولات</h3>
+                <div class="product-grid" id="other-products">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-card fade-in-up">
+                <h2 class="contact-title">آماده همکاری با شما هستیم</h2>
+                <p>برای دریافت اطلاعات بیشتر، قیمت‌گذاری و سفارش محصولات با ما در تماس باشید</p>
+                <div class="contact-methods">
+                    <a href="mailto:sales@madebypersians.ir" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>ایمیل ما</span>
+                    </a>
+                    <a href="https://wa.me/989214843361" class="contact-method" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>واتساپ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>با <span class="footer-highlight">MadeByPersians.ir</span> کیفیت ایرانی را به جهان معرفی کنید</p>
+                <p>&copy; 2024 MadeByPersians.ir - تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Product data organized by categories
+        const products = {
+            'plastic-bags': [
+                { name: 'کیسه پلاستیک', image: 'persian/کیسه پلاستیک.jpg' },
+                { name: 'کیسه فریزر', image: 'persian/کیسه فریزر.jpg' },
+                { name: 'کیسه فریزر رولی', image: 'persian/کیسه فریزر رولی.jpg' },
+                { name: 'کیسه فریزر آسان مصرف', image: 'persian/کیسه فریزر آسان مصرف.jfif' },
+                { name: 'کیسه فریزر پرفراژدار چسبی', image: 'persian/کیسه فریزر پرفراژدار چسبی.jpg' },
+                { name: 'کیسه فریزر پرفراژدار چسبی ۲', image: 'persian/کیسه فریزر پرفراژدار چسبی۲.jpg' },
+                { name: 'کیسه فریزر رولی ضخیم ۳۰۰ گرمی', image: 'persian/کیسه فریزر رولی ضخیم ۳۰۰ گرمی.jpg' },
+                { name: 'کیسه فریزر رولی ضخیم ۵۰۰ گرمی', image: 'persian/کیسه فریزر رولی ضخیم ۵۰۰ گرمی.jpg' },
+                { name: 'کیسه فریزر رولی ضخیم ۱۰۰۰ گرمی', image: 'persian/کیسه فریزر رولی ضخیم 1000 گرمی.jpg' }
+            ],
+            'garbage-bags': [
+                { name: 'کیسه زباله', image: 'persian/کیسه زباله.jpg' },
+                { name: 'کیسه زباله رول', image: 'persian/کیسه زباله رول.jpg' },
+                { name: 'کیسه زباله رول ۲', image: 'persian/کیسه زباله رول (2).jpg' },
+                { name: 'کیسه زباله رول ۳', image: 'persian/کیسه زباله رول ۳.jpg' },
+                { name: 'کیسه زباله مشکی', image: 'persian/کیسه زباله مشکی.jpg' },
+                { name: 'کیسه زباله مشکی رول', image: 'persian/کیسه زباله مشکل رول.jpg' },
+                { name: 'کیسه زباله ۵۰۰ گرمی', image: 'persian/کیسه زباله ۵۰۰ گرمی.jpg' },
+                { name: 'کیسه زباله لندنی ۲۰۰ گرمی', image: 'persian/کیسه زباله لندنی ۲۰۰ گرمی.jpg' },
+                { name: 'کیسه باغ ۱۴۰ گرمی', image: 'persian/کیسه باغ 140 گرمی.jpg' }
+            ],
+            'tablecloths': [
+                { name: 'سفره کاغذی', image: 'persian/سفره کاغذی.jpg' },
+                { name: 'سفره تشریفات', image: 'persian/سفره تشریفات.jpg' },
+                { name: 'سفره تشریفات ۲', image: 'persian/سفره تشریفات ۲.jpg' },
+                { name: 'سفره نایلکسی ۴۰۰ گرمی', image: 'persian/سفره نایلکسی ۴۰۰ گرمی.jpg' }
+            ],
+            'other-products': [
+                { name: 'محافظ غذا', image: 'persian/محافظ غذا.jpg' },
+                { name: 'دستکش یکبار مصرف', image: 'persian/دستکش یکبار مصرف.jpg' },
+                { name: 'دستمال چند منظوره', image: 'persian/دستمال چند منظوره.jpg' }
+            ]
+        };
+
+        // Function to create product card HTML
+        function createProductCard(product) {
+            return `
+                <div class="product-card">
+                    <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h4 class="product-name">${product.name}</h4>
+                    </div>
+                    <div class="product-overlay">
+                        <span>برای اطلاعات بیشتر تماس بگیرید</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to load products into categories
+        function loadProducts() {
+            Object.keys(products).forEach(categoryId => {
+                const container = document.getElementById(categoryId);
+                if (container) {
+                    container.innerHTML = products[categoryId]
+                        .map(product => createProductCard(product))
+                        .join('');
+                }
+            });
+        }
+
+        // Function to change language (placeholder)
+        function changeLanguage(lang) {
+            if (lang === 'en') {
+                alert('English version will be available soon!');
+                // Reset to Persian
+                document.querySelector('.language-selector').value = 'fa';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts();
+            
+            // Observe elements for animation
+            document.querySelectorAll('.product-card, .feature-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Add loading state for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.product-image');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                img.addEventListener('error', function() {
+                    this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij7Yqti12YjbjNixINmF2YjYrNmI2K8g2YbbjNiz2Ko8L3RleHQ+PC9zdmc+';
+                    this.alt = 'تصویر موجود نیست';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
